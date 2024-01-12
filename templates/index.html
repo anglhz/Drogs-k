@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DrogSök.se - Sök Läkemedel</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="DrogSök är en tjänst där användaren kan söka efter ett läkemedel och få resultat om det är narkotikaklassat eller inte. Även vilka aktiva substanser som finns i läkemedlet. Tjänsten är primärt syftat mot polispersonal som jobbar i yttre tjänst.">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png">
+        <link rel="manifest" href="/static/images/favicon/site.webmanifest">
+	    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+	    <script async src="http://xn--drogsk-0xa.se:3000/tracker.js" data-ackee-server="http://xn--drogsk-0xa.se:3000" data-ackee-domain-id="71b1cba2-6171-4e9f-a661-6e38762cfa3a"></script>
+    </head>
+    <body>
+        <h1>Sök efter narkotikaklassat läkemedel</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}" class="active">Sök</a></li>
+                <li><a href="{{ url_for('usage') }}">Användning</a></li>
+                <li><a href="{{ url_for('about') }}">Om programmet</a></li>
+                <li><a href="{{ url_for('mediciner') }}">Läkemedelslista</a></li>
+                <li><a href="{{ url_for('contact') }}">Kontakt/Feedback</a></li>
+            </ul>
+        </nav>
+        <div class="container">
+            <!--<h3 style="color:green;"><b>Programmet har uppdaterats</b></h3>-->
+            <p>Programmet syftar sig främst åt personal som arbetar i yttre tjänst inom polisen.</p>
+            <p>Det ska enkelt och tydligt visa om läkemedel som påträffas är narkotikaklassat eller inte.</p>
+            
+            <form action="{{ url_for('search') }}" method="post" onsubmit="showLoading()">
+                <input type="text" id="search" name="search" placeholder="Sök läkemedel" required>
+                <input type="submit" class="submit-button-1" value="Sök">
+            </form>
+            <br>
+            <div align="center"><img id="loading" style="display: none;" src="/static/images/loading.gif" alt="Laddar..." width="50" height="50"></div>
+        </div>
+        <footer>
+            <p>Copyright &copy; 2024. Alla rättigheter förbehålls. Version 1.2.6</p>
+        </footer>
+    </body>
+</html>

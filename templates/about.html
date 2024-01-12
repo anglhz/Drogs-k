@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DrogSök.se - Om Programmet</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/favicon/site.webmanifest">
+
+</head>
+
+<body>
+    <h1>Om programmet</h1>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Sök</a></li>
+            <li><a href="{{ url_for('usage') }}">Användning</a></li>
+            <li><a href="{{ url_for('about') }}" class="active">Om programmet</a></li>
+            <li><a href="{{ url_for('mediciner') }}">Läkemedelslista</a></li>
+            <li><a href="{{ url_for('contact') }}">Kontakt/Feedback</a></li>
+        </ul>
+    </nav>
+	<h2>Nyheter</h2>
+	<div class="container">
+		<!-- 2023-11-05 -->
+		<p class="paragraf"><b>2023-11-15</b></p>
+        <p class="paragraf">Programmet har uppdaterats från 1.2.5 till 1.2.6.<br><br></p>
+        <p class="paragraf">De uppdateringar som gjorts finns listade nedan:<br><br></p>
+        <ul class="paragraf">
+            <li>
+                Uppdaterad Läkemedelslista.
+            </li>
+        </ul>
+	</div>
+    <div class="container">
+		<!-- 2023-11-09 -->
+		<p class="paragraf"><b>2023-11-09</b></p>
+        <p class="paragraf">Programmet har uppdaterats från 1.2.1 till 1.2.5.<br><br></p>
+        <p class="paragraf">De uppdateringar som gjorts finns listade nedan:<br><br></p>
+        <ul class="paragraf">
+            <li>
+                Ny helhets design.
+            </li>
+            <li>
+                Anpassad design för telefoner.
+            </li>
+			<li>
+                Fungerande kontaktformulär.
+            </li>
+			<li>
+                Andra buggfixar.
+            </li>
+        </ul>
+	</div>
+	<div class="container">	
+		<!-- 2023-03-03 -->
+        <p class="paragraf"><b>2023-03-03</b></p>
+        <p class="paragraf">Programmet har uppdaterats från 1.1.1 till 1.2.1.<br><br></p>
+        <p class="paragraf">De uppdateringar som gjorts finns listade nedan:<br><br></p>
+        <ul class="paragraf">
+            <li>
+                Uppdaterad databas med läkemedel.
+            </li>
+            <li>
+                Möjlighet att leta direkt i FASS.
+            </li>
+            <li>
+                Möjlighet att skicka träffrapport.
+            </li>
+        </ul>
+    </div>
+    <h2>Funktioner</h2>
+    <div class="container">
+        <p class="paragraf">Programmet är baserat på en databas med information om läkemedel som hämtas från <a class="paragraf" href="https://www.lakemedelsverket.se">www.läkemedelsverket.se.</a><br><br></p>
+        <p class="paragraf">Databasen är för närvarande inte automatiserad och uppdateras inte automatiskt. Därför kan det förekomma fel om du söker efter ett relativt nytt läkemedel som ännu inte finns i databasen. Det är viktigt att notera detta för att undvika förväxlingar eller missuppfattningar om läkemedlets klassificering.<br><br></p>
+        <p class="paragraf">Vid en sökning letas värdet upp i databasen. Om sökningen matchar eller liknar ett läkemedel som finns listat i databasen kommer resultatet visa att läkemedlet är narkotikaklassat. För tillfället ger den enbart träff på just narkotikaklassade läkemedel. Vilket i sin tur innebär att du kan skriva vad som helst i sökrutan. Om det inte matchar något i databasen visar programmet att det ej är narkotika.</p>
+    </div>
+
+    <footer>
+        <p>Copyright &copy; 2024. Alla rättigheter förbehålls. Version 1.2.6</p>
+    </footer>
+</body>
+
+</html>

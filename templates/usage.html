@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DrogSök.se - Användning</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/favicon/site.webmanifest">
+
+</head>
+
+<body>
+    <h1>Användning</h1>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Sök</a></li>
+            <li><a href="{{ url_for('usage') }}" class="active">Användning</a></li>
+            <li><a href="{{ url_for('about') }}">Om programmet</a></li>
+            <li><a href="{{ url_for('mediciner') }}">Läkemedelslista</a></li>
+            <li><a href="{{ url_for('contact') }}">Kontakt/Feedback</a></li>
+        </ul>
+    </nav>
+    <h2>Hur du använder programmet</h2>
+    <div class="container">
+        <p class="paragraf"><b>Följ dessa steg för att använda läkemedelsökprogrammet:</b></p>
+        <ol class="paragraf">
+            <li>Ange ett sökord i sökinputen.</li>
+            <li>Klicka på "Sök"-knappen för att skicka formuläret.</li>
+            <li>Visa sökresultaten på resultatsidan.<br><br></li>
+        </ol>
+        <p class="paragraf">Du kan upprepa sökningen så många gånger du vill genom att ange ett nytt sökord och klicka på "Sök"-knappen igen.<br><br></p>
+        <p class="paragraf">Programmet är inte 100% rättssäkert och utesluter inte att läkemedlet som du sökt på INTE är narkotikaklassat. Det är enbart ett hjälpmedel.<br><br></p>
+        <p class="paragraf">Enskild polisman står för sin egna bedömning om läkemedlet ska tas i beslag eller ej. Se gärna på <a class="paragraf" href="https://www.1177.se/">1177</a> om personen har recept.</p>
+    </div>
+    <footer>
+        <p>Copyright &copy; 2024. Alla rättigheter förbehålls. Version 1.2.6</p>
+    </footer>
+</body>
+
+</html>

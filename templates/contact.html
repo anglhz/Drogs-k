@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DrogSök.se - Kontakta Oss</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/favicon/site.webmanifest">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#contact-form').submit(function (e) {
+                e.preventDefault();  // Prevent the default form submission
+
+                $.ajax({
+                    type: "POST",
+                    url: "{{ url_for('submit_form') }}",
+                    data: $(this).serialize(),
+                    success: function (response) {
+                        alert(response);  // Display a popup notification with the response
+                    },
+                    error: function (xhr, status, error) {
+                        alert("Error: Could not submit the form.");  // Display an error popup
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Kontakt / Feedback</h1>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Sök</a></li>
+            <li><a href="{{ url_for('usage') }}">Användning</a></li>
+            <li><a href="{{ url_for('about') }}">Om programmet</a></li>
+            <li><a href="{{ url_for('mediciner') }}">Läkemedelslista</a></li>
+            <li><a href="{{ url_for('contact') }}" class="active">Kontakt/Feedback</a></li>
+        </ul>
+    </nav>
+    <h2>Kontakta oss via formuläret</h2>
+    <div class="container">
+        <p>Skriv i formuläret för att skicka ett meddelande eller om du har någon feedback på programmet.</p>
+        <form id="contact-form" action="/submit_form" method="post">
+            <table>
+                <tr>
+                    <td>Namn:*</td>
+                    <td><input type="text" id="name" name="name" required></td>
+                </tr>
+                <tr>
+                    <td>Email:*</td>
+                    <td><input type="email" id="email" name="email" required></td>
+                </tr>
+				<tr>
+                    <td>Ämne:*</td>
+                    <td><input type="text" id="subject" name="subject" required></td>
+                </tr>
+                <tr>
+                    <td>Meddelande:</td>
+                    <td><textarea class="form-control" id="message" name="message" rows="10"></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" class="submit-button-1" value="Skicka"></td>
+                </tr>
+            </table>
+            <input type="hidden" name="_template" value="table">
+            <input type="text" name="_honey" style="display:none">
+            <input type="hidden" name="_captcha" value="false">
+        </form>
+        <br>
+    </div>
+    <footer>
+        <p>Copyright &copy; 2024. Alla rättigheter förbehålls. Version 1.2.6</p>
+    </footer>
+</body>
+
+</html>

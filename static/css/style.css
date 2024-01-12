@@ -1,0 +1,164 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background-color: #E8E8E8;
+}
+
+nav {
+  background-color: #333;
+  overflow: hidden;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap; /* Enable wrapping for small screens */
+  justify-content: center; /* Center the items in the flex container */
+}
+
+nav li {
+  float: none;
+  margin: 5px; /* Add spacing between navigation items */
+}
+
+nav a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav a.active {
+    background-color: #0505C7;
+    color: white;
+}
+
+nav a:hover {
+  background-color: #0505C7;
+  color: white;
+}
+
+nav a.active:hover {
+    background-color: #0505C7;
+}
+
+.container {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="message"] {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #CCC;
+  width: 250px;
+  padding: 10px;
+}
+
+.submit-button-1 {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #0505C7;
+  color: #FFF;
+  border: 0;
+  margin-top: 20px;
+}
+
+.submit-button-2 {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #a21f1f;
+  color: #FFF;
+  border: 0;
+  margin-top: 20px;
+}
+
+table {
+  margin: 0 auto;
+  text-align: left;
+  overflow-x: auto; /* Add horizontal scrollbar for small screens */
+  font-size: 16px; /* Adjust font size for better readability on small screens */
+}
+
+th, td {
+  padding: 10px;
+}
+
+.paragraf {
+  text-align: left;
+  margin: 10px;
+  width: 80%; /* Adjust width for better responsiveness on small screens */
+}
+
+#error-message {
+  text-align: center;
+  padding: 10px;
+  background-color: #ff6666;
+  color: white;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+}
+
+#loading {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#loading img {
+    margin-bottom: 10px;
+}
+
+
+/* Media Query for screens smaller than 600px */
+@media screen and (max-width: 600px) {
+  nav a {
+      padding: 10px; /* Reduce padding for smaller screens */
+  }
+
+  nav ul {
+      justify-content: space-around; /* Adjust layout for small screens */
+  }
+
+  .paragraf {
+      width: 100%; /* Adjust width for better responsiveness on very small screens */
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="message"] {
+      width: 100%;
+      box-sizing: border-box; /* Ensure padding is included in the width */
+      margin-top: 20px;
+  }
+  
+  table {
+      font-size: 11px; /* Further reduce font size for small screens */
+  }
+  
+  .container {
+  max-width: 100%;
+ }
+}
